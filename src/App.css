@@ -1,0 +1,133 @@
+/* 🌊 App.css — Global Layout + Responsive Design */
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f9fbff;
+  color: #0f172a;
+}
+
+/* Center content and maintain spacing */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Headers */
+h1, h2, h3 {
+  color: #0ea5e9;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Dashboard cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.3);
+}
+
+/* 🔹 Topbar */
+.topbar {
+  width: 100%;
+  height: 60px;
+  background: #0ea5e9;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔹 Navbar (Floating bottom on mobile, sidebar on desktop) */
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.8rem 0;
+  z-index: 999;
+}
+
+/* ✅ Tablet & Desktop View */
+@media (min-width: 768px) {
+  .page-container {
+    padding: 3rem;
+  }
+
+  .card-grid {
+    gap: 2rem;
+  }
+}
+
+/* ✅ Desktop Layout */
+@media (min-width: 1024px) {
+  .navbar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 220px;
+    height: calc(100vh - 60px);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    border-top: none;
+    border-right: 1px solid #e2e8f0;
+  }
+
+  .page-container {
+    margin-left: 240px; /* leave space for sidebar */
+    margin-top: 60px;   /* leave space for topbar */
+  }
+
+  .card {
+    padding: 2rem;
+  }
+}
+
+/* ✅ Mobile optimization */
+@media (max-width: 480px) {
+  .page-container {
+    padding: 1.2rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+}
+
