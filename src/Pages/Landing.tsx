@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Landing.css";
+import logo from "../assets/ulohub.jpg";
 
 const Landing: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate("/login"); // redirect after 5s
+      navigate("/login");
     }, 5000);
 
     return () => clearTimeout(timer);
@@ -16,8 +17,8 @@ const Landing: React.FC = () => {
   return (
     <div className="landing-container">
       <img
-        src="/R logo.png"
-        alt="Rent Radar Logo"
+        src={logo}
+        alt="Ulohub Logo"
         className="landing-logo"
       />
 
